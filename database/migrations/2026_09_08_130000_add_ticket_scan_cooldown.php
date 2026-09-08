@@ -17,7 +17,7 @@ return new class extends Migration
 
         DB::table('settings')->updateOrInsert(
             ['key' => 'ticket_scan_cooldown_seconds'],
-            ['value' => '0']
+            ['value' => '120']
         );
     }
 
