@@ -26,12 +26,7 @@ class ApiController extends Controller
 
     public function detailGroupLast(Request $request)
     {
-        $transaction = Transaction::where('status', 'open')
-            ->where('tipe', 'group')
-            ->where('gate', $request->gate)
-            ->select(['ticket_code', 'amount', 'amount_scanned', 'updated_at'])
-            ->orderBy('updated_at', 'desc')
-            ->first();
+        $transaction = Transaction::where('status', 'open')->where('tipe', 'group')->where('gate', $request->gate)->select(['ticket_code', 'amount', 'amount_scanned', 'updated_at'])->orderBy('updated_at', 'desc')->first();
         $transaction['time'] = Carbon::parse($transaction->updated_at)->format('d/m/Y H:i:s');
         return response()->json($transaction);
     }
@@ -45,39 +40,22 @@ class ApiController extends Controller
     public function checkIndividualTicket($ticket)
     {
         $transScanned = DetailTransaction::with('transaction')->where('ticket_code', $ticket)->first();
-        if (!$transScanned) {
-            return response()->json(["status" => "Not found", "message" => "Ticket not found"]);
-        }
-        if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) {
-            return response()->json(["status" => "close", "count" => 0, "message" => "Ticket expired"]);
-        }
+        if (!$transScanned) return response()->json(["status" => "Not found", "message" => "Ticket not found"]);
+        if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) return response()->json(["status" => "close", "count" => 0, "message" => "Ticket expired"]);
 
         $maxAllowed = $this->resolveMaxScan((int) $transScanned->qty);
-        if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) {
-            return response()->json(["status" => "close", "count" => 0, "message" => "Ticket already fully scanned"]);
-        }
+        if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) return response()->json(["status" => "close", "count" => 0, "message" => "Ticket already fully scanned"]);
 
         $transScanned->refresh();
         $cooldown = $this->ticketScanCooldownResponse($transScanned);
-        if ($cooldown) {
-            return $cooldown;
-        }
-        if ($transScanned->status == "close") {
-            return response()->json(["status" => $transScanned->status, "count" => 0, "message" => "Ticket closed"]);
-        }
+        if ($cooldown) return $cooldown;
+        if ($transScanned->status == "close") return response()->json(["status" => $transScanned->status, "count" => 0, "message" => "Ticket closed"]);
 
         $counting = (int) $transScanned->scanned + 1;
         $now = Carbon::now('Asia/Jakarta');
-        DetailTransaction::where('ticket_code', $ticket)->update([
-            "scanned" => $counting,
-            "scanned_at" => $now->format('Y-m-d H:i:s'),
-        ]);
+        DetailTransaction::where('ticket_code', $ticket)->update(["scanned" => $counting, "scanned_at" => $now->format('Y-m-d H:i:s')]);
 
-        return response()->json([
-            "status" => "open",
-            "count" => max(0, $maxAllowed - $counting),
-            "message" => "OK"
-        ]);
+        return response()->json(["status" => "open", "count" => max(0, $maxAllowed - $counting), "message" => "OK"]);
     }
 
     public function checkGroupTicket(Request $request, $ticket)
@@ -111,8 +89,7 @@ class ApiController extends Controller
 
             $maxAllowed = $this->resolveMaxScan((int) $transScanned->qty);
 
-            // Once the quota is exhausted, this is immediately closed.
-            // Do not apply cooldown to scans after the final successful scan.
+            // Once the quota is exhausted, close immediately. No cooldown is applied after quota is exhausted.
             if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) {
                 return response()->json(["status" => "close", "count" => 0, "message" => "Ticket already fully scanned"]);
             }
@@ -130,10 +107,7 @@ class ApiController extends Controller
 
             $counting = (int) $transScanned->scanned + 1;
             $now = Carbon::now('Asia/Jakarta');
-            DetailTransaction::where('ticket_code', $request->ticket)->update([
-                "scanned" => $counting,
-                "scanned_at" => $now->format('Y-m-d H:i:s'),
-            ]);
+            DetailTransaction::where('ticket_code', $request->ticket)->update(["scanned" => $counting, "scanned_at" => $now->format('Y-m-d H:i:s')]);
 
             if ($this->shouldCloseInvoice($invoice)) {
                 $invoice->status = "closed";
@@ -141,12 +115,8 @@ class ApiController extends Controller
                 $invoice->save();
             }
 
-            // The final quota-consuming scan is still OPEN. The next scan is CLOSE.
-            return response()->json([
-                "status" => "open",
-                "count" => max(0, $maxAllowed - $counting),
-                "message" => "OK"
-            ]);
+            // The final successful scan is still OPEN with count 0. The next scan is CLOSE.
+            return response()->json(["status" => "open", "count" => max(0, $maxAllowed - $counting), "message" => "OK"]);
         }
 
         $now = now('Asia/Jakarta')->format('Y-m-d');
@@ -178,7 +148,7 @@ class ApiController extends Controller
             History::create(['member_id' => 0, 'gate' => $request->gate, 'user_id' => $employe->id, 'waktu' => now('Asia/Jakarta')->format('Y-m-d H:i:s')]);
             return response()->json(["status" => 'open', "message" => "Gate user"]);
         }
-        return response()->json(["status" => 'close', "message' => "Card tidak terdaftar"]);
+        return response()->json(["status" => 'close', "message" => "Card tidak terdaftar"]);
     }
 
     public function gateTerusan(Request $request)
