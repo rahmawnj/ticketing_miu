@@ -50,7 +50,6 @@ class ApiController extends Controller
 
     public function checkIndividualTicket($ticket)
     {
-
         $transScanned = DetailTransaction::with('transaction')
             ->where('ticket_code', $ticket)
             ->first();
@@ -79,6 +78,11 @@ class ApiController extends Controller
             ]);
         }
 
+        $cooldown = $this->ticketScanCooldownResponse($transScanned);
+        if ($cooldown) {
+            return $cooldown;
+        }
+
         if ($transScanned->status == "close") {
             return response()->json([
                 "status" => $transScanned->status,
@@ -90,6 +94,7 @@ class ApiController extends Controller
         $counting = (int) $transScanned->scanned + 1;
         $payload = [
             "scanned" => $counting,
+            "last_scanned_at" => Carbon::now('Asia/Jakarta'),
         ];
 
         if ($counting >= $maxAllowed) {
@@ -100,7 +105,7 @@ class ApiController extends Controller
         DetailTransaction::where('ticket_code', $ticket)->update($payload);
 
         return response()->json([
-            "status" => $transScanned->status,
+            "status" => $counting >= $maxAllowed ? "close" : "open",
             "count" => max(0, $maxAllowed - $counting),
             "message" => "OK"
         ]);
@@ -139,7 +144,6 @@ class ApiController extends Controller
             "gate" => $request->gate,
         ]);
 
-
         if ($transScanned->status == "closed") {
             return response()->json([
                 "status" => $transScanned->status,
@@ -173,13 +177,17 @@ class ApiController extends Controller
     // In Use
     public function check(Request $request)
     {
-        $transScanned = DetailTransaction::with('transaction')->where('ticket_code', $request->ticket)->first();
-if (empty($request->ticket)) {
-        return response()->json([
-            "status" => "error",
-            "message" => "QR Code/Ticket tidak boleh kosong!"
-        ], 400);
-    }
+        if (empty($request->ticket)) {
+            return response()->json([
+                "status" => "error",
+                "message" => "QR Code/Ticket tidak boleh kosong!"
+            ], 400);
+        }
+
+        $transScanned = DetailTransaction::with('transaction')
+            ->where('ticket_code', $request->ticket)
+            ->first();
+
         if ($transScanned) {
             if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) {
                 return response()->json([
@@ -230,34 +238,39 @@ if (empty($request->ticket)) {
                 ]);
             }
 
-            $counting = $transScanned->scanned + 1;
-            if ($counting >= $maxAllowed) {
-                DetailTransaction::where('ticket_code', $request->ticket)
-                    ->update([
-                        "status" => "close",
-                        "scanned" => $counting,
-                        "scanned_at" => Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s')
-                    ]);
+            $cooldown = $this->ticketScanCooldownResponse($transScanned);
+            if ($cooldown) {
+                return $cooldown;
+            }
 
-                if ($this->shouldCloseInvoice($invoice)) {
-                    $invoice->status = "closed";
-                    $invoice->amount_scanned = $invoice->detail()->sum('scanned');
-                    $invoice->save();
-                }
-            } else {
-                DetailTransaction::where('ticket_code', $request->ticket)
-                    ->update([
-                        "scanned" => $counting
-                    ]);
+            $now = Carbon::now('Asia/Jakarta');
+            $counting = (int) $transScanned->scanned + 1;
+            $payload = [
+                "scanned" => $counting,
+                "last_scanned_at" => $now,
+            ];
+
+            if ($counting >= $maxAllowed) {
+                $payload["status"] = "close";
+                $payload["scanned_at"] = $now->format('Y-m-d H:i:s');
+            }
+
+            DetailTransaction::where('ticket_code', $request->ticket)
+                ->update($payload);
+
+            if ($this->shouldCloseInvoice($invoice)) {
+                $invoice->status = "closed";
+                $invoice->amount_scanned = $invoice->detail()->sum('scanned');
+                $invoice->save();
             }
 
             return response()->json([
-                "status" => $transScanned->status,
+                "status" => $counting >= $maxAllowed ? "close" : "open",
                 "count" => max(0, $maxAllowed - $counting),
                 "message" => "OK"
             ]);
         } else {
-            $now = Carbon::now('Asia/Jakarta')->format('Y-m-d');
+            $now = now('Asia/Jakarta')->format('Y-m-d');
 
             $member = Member::where('rfid', $request->ticket)->orWhere('qr_code', $request->ticket)->first();
             $employe = User::where('uid', $request->ticket)->first();
@@ -275,7 +288,6 @@ if (empty($request->ticket)) {
                     $maxAccess = max((int) ($membership->max_access ?? 0), 0);
                     $accessUsed = max((int) ($member->access_used ?? 0), 0);
                     $isUnlimitedAccess = $maxAccess === 0;
-                    // dd($membership, $member );
                     if (!$isUnlimitedAccess && $accessUsed >= $maxAccess) {
                         return response()->json([
                             "status" => 'close',
@@ -442,6 +454,31 @@ if (empty($request->ticket)) {
         }
 
         return $qty * $limit;
+    }
+
+    private function ticketScanCooldownResponse(DetailTransaction $ticket): ?\Illuminate\Http\JsonResponse
+    {
+        $cooldownSeconds = max((int) Setting::valueOf('ticket_scan_cooldown_seconds', 0), 0);
+        if ($cooldownSeconds <= 0 || empty($ticket->last_scanned_at)) {
+            return null;
+        }
+
+        $lastScannedAt = Carbon::parse($ticket->last_scanned_at)->timezone('Asia/Jakarta');
+        $now = Carbon::now('Asia/Jakarta');
+        $elapsedSeconds = $lastScannedAt->diffInSeconds($now);
+        $remainingSeconds = $cooldownSeconds - $elapsedSeconds;
+
+        if ($remainingSeconds <= 0) {
+            return null;
+        }
+
+        return response()->json([
+            "status" => "wait",
+            "count" => max(0, (int) $ticket->scanned),
+            "cooldown_seconds" => $cooldownSeconds,
+            "remaining_seconds" => $remainingSeconds,
+            "message" => "Ticket belum bisa discan lagi. Tunggu {$remainingSeconds} detik."
+        ], 429);
     }
 
     private function shouldCloseInvoice(Transaction $invoice): bool
