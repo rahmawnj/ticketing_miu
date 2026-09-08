@@ -257,8 +257,7 @@ class ApiController extends Controller
                 $payload["status"] = "close";
             }
 
-            DetailTransaction::where('ticket_code', $request->ticket)
-                ->update($payload);
+            DetailTransaction::where('ticket_code', $request->ticket)->update($payload);
 
             if ($this->shouldCloseInvoice($invoice)) {
                 $invoice->status = "closed";
@@ -335,7 +334,7 @@ class ApiController extends Controller
                             "status" => 'close',
                             "message" => "Cannot access gate",
                             "count" => $remainingAccess,
-                            "membership_access' => [
+                            "membership_access" => [
                                 "type" => $isUnlimitedAccess ? "unlimited" : "limited",
                                 "limit" => $isUnlimitedAccess ? null : $maxAccess,
                                 "used" => $accessUsed,
