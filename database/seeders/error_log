@@ -1,0 +1,32 @@
+[13-Mar-2026 15:11:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/DatabaseSeeder.php on line 8
+[13-Mar-2026 15:50:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/DatabaseSeeder.php on line 8
+[13-Mar-2026 16:40:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/PermissionSeeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/PermissionSeeder.php on line 10
+[13-Mar-2026 17:38:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/TicketSeeder.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/TicketSeeder.php on line 9
+[13-Mar-2026 17:41:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/SewaSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/SewaSeeder.php on line 8
+[13-Mar-2026 17:43:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/PermissionSeeder.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/PermissionSeeder.php on line 10
+[13-Mar-2026 19:57:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/TicketSeeder.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/TicketSeeder.php on line 9
+[13-Mar-2026 20:23:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/SewaSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/seeders/SewaSeeder.php on line 8

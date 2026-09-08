@@ -1,0 +1,8 @@
+[13-Mar-2026 17:20:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Factory" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/factories/UserFactory.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/factories/UserFactory.php on line 8
+[13-Mar-2026 19:28:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Factories\Factory" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/factories/UserFactory.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/factories/UserFactory.php on line 8

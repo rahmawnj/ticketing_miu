@@ -1,0 +1,12 @@
+[13-Mar-2026 12:12:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php on line 14
+[13-Mar-2026 12:12:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php on line 14
+[13-Mar-2026 14:02:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/bootstrap/app.php on line 14

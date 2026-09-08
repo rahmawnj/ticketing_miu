@@ -1,0 +1,512 @@
+[13-Mar-2026 12:44:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_022739_create_sewas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_022739_create_sewas_table.php on line 7
+[13-Mar-2026 12:44:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_141124_add_scanned_at_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_141124_add_scanned_at_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:45:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000004_add_use_time_to_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000004_add_use_time_to_sewa_table.php on line 7
+[13-Mar-2026 12:45:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_11_144134_add_user_id_to_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_11_144134_add_user_id_to_histories_table.php on line 7
+[13-Mar-2026 12:47:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_12_000002_add_member_delete_grace_days_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_12_000002_add_member_delete_grace_days_to_settings_table.php on line 7
+[13-Mar-2026 12:48:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_085330_add_no_hp_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_085330_add_no_hp_to_members_table.php on line 7
+[13-Mar-2026 12:48:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_022739_create_sewas_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_022739_create_sewas_table.php on line 7
+[13-Mar-2026 12:49:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_141124_add_scanned_at_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_141124_add_scanned_at_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:49:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_194953_add_parent_id_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_194953_add_parent_id_to_members_table.php on line 7
+[13-Mar-2026 12:49:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000004_add_use_time_to_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000004_add_use_time_to_sewa_table.php on line 7
+[13-Mar-2026 12:50:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_03_210146_add_ticket_code_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_03_210146_add_ticket_code_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:51:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_11_144134_add_user_id_to_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_11_144134_add_user_id_to_histories_table.php on line 7
+[13-Mar-2026 12:51:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_16_000003_add_dashboard_metric_mode_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_16_000003_add_dashboard_metric_mode_to_settings_table.php on line 7
+[13-Mar-2026 12:52:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_12_000002_add_member_delete_grace_days_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_12_000002_add_member_delete_grace_days_to_settings_table.php on line 7
+[13-Mar-2026 12:52:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061824_add_is_print_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061824_add_is_print_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:53:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_194953_add_parent_id_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_194953_add_parent_id_to_members_table.php on line 7
+[13-Mar-2026 12:53:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_101600_make_alamat_nullable_in_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_101600_make_alamat_nullable_in_members_table.php on line 7
+[13-Mar-2026 12:54:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_085330_add_no_hp_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_085330_add_no_hp_to_members_table.php on line 7
+[13-Mar-2026 12:54:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061401_add_is_print_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061401_add_is_print_to_transactions_table.php on line 7
+[13-Mar-2026 12:55:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_03_210146_add_ticket_code_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_03_210146_add_ticket_code_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:55:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000004_add_whatsapp_enabled_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000004_add_whatsapp_enabled_to_settings_table.php on line 7
+[13-Mar-2026 12:56:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_16_000003_add_dashboard_metric_mode_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_16_000003_add_dashboard_metric_mode_to_settings_table.php on line 7
+[13-Mar-2026 12:56:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_member_fields_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_member_fields_to_transactions_table.php on line 7
+[13-Mar-2026 12:57:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061824_add_is_print_to_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061824_add_is_print_to_detail_transactions_table.php on line 7
+[13-Mar-2026 12:57:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_000007_add_is_nominal_flexible_to_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_000007_add_is_nominal_flexible_to_sewa_table.php on line 7
+[13-Mar-2026 12:58:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_101600_make_alamat_nullable_in_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_101600_make_alamat_nullable_in_members_table.php on line 7
+[13-Mar-2026 12:58:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_print_mode_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_print_mode_to_settings_table.php on line 7
+[13-Mar-2026 12:59:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061401_add_is_print_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_061401_add_is_print_to_transactions_table.php on line 7
+[13-Mar-2026 12:59:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000007_add_access_used_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000007_add_access_used_to_members_table.php on line 7
+[13-Mar-2026 13:00:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000004_add_whatsapp_enabled_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000004_add_whatsapp_enabled_to_settings_table.php on line 7
+[13-Mar-2026 13:00:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_102231_add_limit_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_102231_add_limit_to_members_table.php on line 7
+[13-Mar-2026 13:01:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_member_fields_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_member_fields_to_transactions_table.php on line 7
+[13-Mar-2026 13:01:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_000000_create_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_000000_create_users_table.php on line 7
+[13-Mar-2026 13:02:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_000007_add_is_nominal_flexible_to_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_000007_add_is_nominal_flexible_to_sewa_table.php on line 7
+[13-Mar-2026 13:02:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_05_104103_create_gate_access_membership_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_05_104103_create_gate_access_membership_table.php on line 7
+[13-Mar-2026 13:03:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_print_mode_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000001_add_print_mode_to_settings_table.php on line 7
+[13-Mar-2026 13:03:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_27_000009_add_admin_fee_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_27_000009_add_admin_fee_to_transactions_table.php on line 7
+[13-Mar-2026 13:04:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000007_add_access_used_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000007_add_access_used_to_members_table.php on line 7
+[13-Mar-2026 13:04:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000006_add_max_access_to_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000006_add_max_access_to_memberships_table.php on line 7
+[13-Mar-2026 13:05:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_102231_add_limit_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_102231_add_limit_to_members_table.php on line 7
+[13-Mar-2026 13:05:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_105325_add_max_person_to_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_105325_add_max_person_to_memberships_table.php on line 7
+[13-Mar-2026 13:06:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_000000_create_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_000000_create_users_table.php on line 7
+[13-Mar-2026 13:06:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_130000_add_code_to_memberships_table.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_130000_add_code_to_memberships_table.php on line 9
+[13-Mar-2026 13:07:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_05_104103_create_gate_access_membership_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_05_104103_create_gate_access_membership_table.php on line 7
+[13-Mar-2026 13:07:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_25_120000_add_card_fields_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_25_120000_add_card_fields_to_transactions_table.php on line 7
+[13-Mar-2026 13:08:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_27_000009_add_admin_fee_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_27_000009_add_admin_fee_to_transactions_table.php on line 7
+[13-Mar-2026 13:08:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000005_remove_time_fields_from_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000005_remove_time_fields_from_sewa_table.php on line 7
+[13-Mar-2026 13:09:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000006_add_max_access_to_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000006_add_max_access_to_memberships_table.php on line 7
+[13-Mar-2026 13:10:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_19_111103_add_bayar_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_19_111103_add_bayar_to_transactions_table.php on line 7
+[13-Mar-2026 13:10:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_105325_add_max_person_to_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_10_105325_add_max_person_to_memberships_table.php on line 7
+[13-Mar-2026 13:11:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_022411_create_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_022411_create_members_table.php on line 7
+[13-Mar-2026 13:11:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_130000_add_code_to_memberships_table.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_130000_add_code_to_memberships_table.php on line 9
+[13-Mar-2026 13:12:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_03_103029_create_limit_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_03_103029_create_limit_members_table.php on line 7
+[13-Mar-2026 13:12:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_25_120000_add_card_fields_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_25_120000_add_card_fields_to_transactions_table.php on line 7
+[13-Mar-2026 13:13:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_15_030043_create_topups_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_15_030043_create_topups_table.php on line 7
+[13-Mar-2026 13:13:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000005_remove_time_fields_from_sewa_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_10_000005_remove_time_fields_from_sewa_table.php on line 7
+[13-Mar-2026 13:14:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_100000_create_password_resets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_100000_create_password_resets_table.php on line 7
+[13-Mar-2026 13:15:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_19_111103_add_bayar_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_19_111103_add_bayar_to_transactions_table.php on line 7
+[13-Mar-2026 13:15:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_08_19_000000_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_08_19_000000_create_failed_jobs_table.php on line 7
+[13-Mar-2026 13:16:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_15_030043_create_topups_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_15_030043_create_topups_table.php on line 7
+[13-Mar-2026 13:16:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_05_03_083958_add_metode_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_05_03_083958_add_metode_to_transactions_table.php on line 7
+[13-Mar-2026 13:17:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_022411_create_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_022411_create_members_table.php on line 7
+[13-Mar-2026 13:17:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_04_163914_create_gate_accesses_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_04_163914_create_gate_accesses_table.php on line 7
+[13-Mar-2026 13:18:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_03_103029_create_limit_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_03_103029_create_limit_members_table.php on line 7
+[13-Mar-2026 13:18:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_115018_create_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_115018_create_settings_table.php on line 7
+[13-Mar-2026 13:19:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_100000_create_password_resets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2014_10_12_100000_create_password_resets_table.php on line 7
+[13-Mar-2026 13:19:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_12_023911_create_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_12_023911_create_detail_transactions_table.php on line 7
+[13-Mar-2026 13:20:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_08_19_000000_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_08_19_000000_create_failed_jobs_table.php on line 7
+[13-Mar-2026 13:20:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_120000_create_membership_admin_fees_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_120000_create_membership_admin_fees_table.php on line 7
+[13-Mar-2026 13:21:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_05_03_083958_add_metode_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_05_03_083958_add_metode_to_transactions_table.php on line 7
+[13-Mar-2026 13:21:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php on line 7
+[13-Mar-2026 13:22:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_04_163914_create_gate_accesses_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_04_163914_create_gate_accesses_table.php on line 7
+[13-Mar-2026 13:22:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_04_181135_add_uid_to_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_04_181135_add_uid_to_users_table.php on line 7
+[13-Mar-2026 13:23:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_115018_create_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_115018_create_settings_table.php on line 7
+[13-Mar-2026 13:23:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_203329_add_qr_code_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_203329_add_qr_code_to_members_table.php on line 7
+[13-Mar-2026 13:24:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_12_023911_create_detail_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_12_023911_create_detail_transactions_table.php on line 7
+[13-Mar-2026 13:24:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_183504_add_use_logo_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_183504_add_use_logo_to_settings_table.php on line 7
+[13-Mar-2026 13:25:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_120000_create_membership_admin_fees_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_120000_create_membership_admin_fees_table.php on line 7
+[13-Mar-2026 13:25:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_080534_add_user_id_to_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_080534_add_user_id_to_penyewaans_table.php on line 7
+[13-Mar-2026 13:26:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php on line 7
+[13-Mar-2026 13:26:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091410_create_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091410_create_transactions_table.php on line 7
+[13-Mar-2026 13:27:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_183504_add_use_logo_to_settings_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_12_05_183504_add_use_logo_to_settings_table.php on line 7
+[13-Mar-2026 13:27:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000006_create_whatsapp_notification_logs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000006_create_whatsapp_notification_logs_table.php on line 7
+[13-Mar-2026 13:28:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_080534_add_user_id_to_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_080534_add_user_id_to_penyewaans_table.php on line 7
+[13-Mar-2026 13:29:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_130000_simplify_membership_admin_fees_table.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_130000_simplify_membership_admin_fees_table.php on line 8
+[13-Mar-2026 13:29:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_04_181135_add_uid_to_users_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_04_181135_add_uid_to_users_table.php on line 7
+[13-Mar-2026 13:30:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_160000_add_renewal_notice_settings_defaults.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_160000_add_renewal_notice_settings_defaults.php on line 6
+[13-Mar-2026 13:30:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_203329_add_qr_code_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_203329_add_qr_code_to_members_table.php on line 7
+[13-Mar-2026 13:31:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150100_change_metode_column_on_transactions_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150100_change_metode_column_on_transactions_table.php on line 6
+[13-Mar-2026 13:31:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091410_create_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091410_create_transactions_table.php on line 7
+[13-Mar-2026 13:32:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_10_145804_add_bayar_to_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_10_145804_add_bayar_to_penyewaans_table.php on line 7
+[13-Mar-2026 13:32:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000006_create_whatsapp_notification_logs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_19_000006_create_whatsapp_notification_logs_table.php on line 7
+[13-Mar-2026 13:33:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091239_create_tickets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091239_create_tickets_table.php on line 7
+[13-Mar-2026 13:33:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_160000_add_renewal_notice_settings_defaults.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_160000_add_renewal_notice_settings_defaults.php on line 6
+[13-Mar-2026 13:34:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091237_create_jenis_tickets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091237_create_jenis_tickets_table.php on line 7
+[13-Mar-2026 13:34:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_130000_simplify_membership_admin_fees_table.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_06_130000_simplify_membership_admin_fees_table.php on line 8
+[13-Mar-2026 13:35:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_13_065403_create_terusan_ticket_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_13_065403_create_terusan_ticket_table.php on line 7
+[13-Mar-2026 13:36:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150100_change_metode_column_on_transactions_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150100_change_metode_column_on_transactions_table.php on line 6
+[13-Mar-2026 13:36:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_064151_create_permission_tables.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_064151_create_permission_tables.php on line 8
+[13-Mar-2026 13:37:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_10_145804_add_bayar_to_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_10_145804_add_bayar_to_penyewaans_table.php on line 7
+[13-Mar-2026 13:37:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_204653_create_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_204653_create_memberships_table.php on line 7
+[13-Mar-2026 13:38:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_13_065403_create_terusan_ticket_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_13_065403_create_terusan_ticket_table.php on line 7
+[13-Mar-2026 13:38:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_11_073712_create_terusans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_11_073712_create_terusans_table.php on line 7
+[13-Mar-2026 13:39:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091239_create_tickets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091239_create_tickets_table.php on line 7
+[13-Mar-2026 13:39:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024121_create_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024121_create_penyewaans_table.php on line 7
+[13-Mar-2026 13:40:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091237_create_jenis_tickets_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_02_16_091237_create_jenis_tickets_table.php on line 7
+[13-Mar-2026 13:40:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_030149_create_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_030149_create_histories_table.php on line 7
+[13-Mar-2026 13:41:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_064151_create_permission_tables.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_064151_create_permission_tables.php on line 8
+[13-Mar-2026 13:41:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150000_change_metode_column_on_penyewaans_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150000_change_metode_column_on_penyewaans_table.php on line 6
+[13-Mar-2026 13:42:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024121_create_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024121_create_penyewaans_table.php on line 7
+[13-Mar-2026 13:42:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_160000_drop_member_code_from_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_160000_drop_member_code_from_members_table.php on line 7
+[13-Mar-2026 13:43:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_030149_create_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_06_030149_create_histories_table.php on line 7
+[13-Mar-2026 13:43:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_101521_add_discount_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_101521_add_discount_to_transactions_table.php on line 7
+[13-Mar-2026 13:44:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_11_073712_create_terusans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_11_073712_create_terusans_table.php on line 7
+[13-Mar-2026 13:44:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_07_135533_add_waktu_to_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_07_135533_add_waktu_to_histories_table.php on line 7
+[13-Mar-2026 13:45:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_204653_create_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_10_31_204653_create_memberships_table.php on line 7
+[13-Mar-2026 13:45:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_100000_refactor_settings_to_key_value_table.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_100000_refactor_settings_to_key_value_table.php on line 8
+[13-Mar-2026 13:46:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150000_change_metode_column_on_penyewaans_table.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_03_02_150000_change_metode_column_on_penyewaans_table.php on line 6
+[13-Mar-2026 13:46:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_090340_create_history_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_090340_create_history_memberships_table.php on line 7
+[13-Mar-2026 13:47:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_160000_drop_member_code_from_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_160000_drop_member_code_from_members_table.php on line 7
+[13-Mar-2026 13:47:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024401_create_history_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024401_create_history_penyewaans_table.php on line 7
+[13-Mar-2026 13:48:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_101521_add_discount_to_transactions_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_27_101521_add_discount_to_transactions_table.php on line 7
+[13-Mar-2026 13:49:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_07_135533_add_waktu_to_histories_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_07_135533_add_waktu_to_histories_table.php on line 7
+[13-Mar-2026 13:50:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_100000_refactor_settings_to_key_value_table.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2026_02_24_100000_refactor_settings_to_key_value_table.php on line 8
+[13-Mar-2026 13:51:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_090340_create_history_memberships_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2025_11_11_090340_create_history_memberships_table.php on line 7
+[13-Mar-2026 13:52:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024401_create_history_penyewaans_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2023_04_07_024401_create_history_penyewaans_table.php on line 7
+[13-Mar-2026 13:57:01 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_103327_add_jenis_member_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_103327_add_jenis_member_to_members_table.php on line 7
+[13-Mar-2026 14:00:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Migrations\Migration" not found in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_103327_add_jenis_member_to_members_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/database/migrations/2024_06_25_103327_add_jenis_member_to_members_table.php on line 7

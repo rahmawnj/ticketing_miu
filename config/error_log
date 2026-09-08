@@ -1,0 +1,160 @@
+[13-Mar-2026 12:09:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[13-Mar-2026 12:09:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/tazd4675/public_html/miu.tazaka.co.id/config/dompdf.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/dompdf.php on line 48
+[13-Mar-2026 12:09:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/cache.php on line 18
+[13-Mar-2026 12:10:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/queue.php on line 16
+[13-Mar-2026 12:10:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[13-Mar-2026 12:10:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/tazd4675/public_html/miu.tazaka.co.id/config/dompdf.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/dompdf.php on line 48
+[13-Mar-2026 12:10:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Maatwebsite\Excel\Excel" not found in /home/tazd4675/public_html/miu.tazaka.co.id/config/excel.php:165
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/excel.php on line 165
+[13-Mar-2026 12:10:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/queue.php on line 16
+[13-Mar-2026 12:11:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Maatwebsite\Excel\Excel" not found in /home/tazd4675/public_html/miu.tazaka.co.id/config/excel.php:165
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/excel.php on line 165
+[13-Mar-2026 12:11:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/cache.php on line 18
+[13-Mar-2026 12:16:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/session.php on line 21
+[13-Mar-2026 12:17:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/session.php on line 21
+[13-Mar-2026 12:17:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/hashing.php on line 32
+[13-Mar-2026 12:18:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/sanctum.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/sanctum.php on line 16
+[13-Mar-2026 12:18:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/sanctum.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/sanctum.php on line 16
+[13-Mar-2026 12:19:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/hashing.php on line 32
+[13-Mar-2026 12:26:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/logging.php on line 20
+[13-Mar-2026 12:26:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/logging.php on line 20
+[13-Mar-2026 12:35:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/database.php on line 18
+[13-Mar-2026 12:36:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/database.php on line 18
+[13-Mar-2026 12:39:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/app.php on line 16
+[13-Mar-2026 12:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[13-Mar-2026 12:40:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/app.php on line 16
+[13-Mar-2026 12:40:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[13-Mar-2026 12:45:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/datatables.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/datatables.php on line 79
+[13-Mar-2026 13:55:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/broadcasting.php on line 18
+[13-Mar-2026 13:59:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/broadcasting.php on line 18
+[13-Mar-2026 14:07:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/filesystems.php on line 16
+[13-Mar-2026 14:16:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/filesystems.php on line 16
+[13-Mar-2026 14:24:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/tazd4675/public_html/miu.tazaka.co.id/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/view.php on line 17
+[13-Mar-2026 14:30:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/tazd4675/public_html/miu.tazaka.co.id/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/view.php on line 17
+[27-Mar-2026 15:53:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[27-Mar-2026 15:53:00 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[27-Mar-2026 15:53:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[27-Mar-2026 15:53:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[11-Apr-2026 07:49:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[11-Apr-2026 07:50:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[11-Apr-2026 14:57:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18
+[11-Apr-2026 14:57:55 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/mail.php on line 16
+[11-Apr-2026 14:58:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/config/services.php on line 18

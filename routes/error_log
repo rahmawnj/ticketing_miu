@@ -1,0 +1,32 @@
+[13-Mar-2026 12:09:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/api.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/api.php on line 19
+[13-Mar-2026 12:09:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/web.php:39
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/web.php on line 39
+[13-Mar-2026 12:10:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/api.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/api.php on line 19
+[13-Mar-2026 12:10:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/web.php:39
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/web.php on line 39
+[13-Mar-2026 12:16:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/console.php on line 17
+[13-Mar-2026 12:16:46 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/console.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/console.php on line 17
+[13-Mar-2026 12:39:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/channels.php on line 16
+[13-Mar-2026 12:40:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Broadcast" not found in /home/tazd4675/public_html/miu.tazaka.co.id/routes/channels.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/routes/channels.php on line 16

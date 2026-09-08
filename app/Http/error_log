@@ -1,0 +1,8 @@
+[13-Mar-2026 16:21:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/tazd4675/public_html/miu.tazaka.co.id/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/app/Http/Kernel.php on line 7
+[13-Mar-2026 17:23:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Kernel" not found in /home/tazd4675/public_html/miu.tazaka.co.id/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/tazd4675/public_html/miu.tazaka.co.id/app/Http/Kernel.php on line 7
