@@ -474,18 +474,27 @@ class ApiController extends Controller
             return null;
         }
 
-        $lastScannedAt = Carbon::parse($ticket->scanned_at)->timezone('Asia/Jakarta');
+        // scanned_at is stored as a Jakarta local timestamp, so parse it explicitly
+        // in the same timezone instead of letting the app/server timezone reinterpret it.
+        $lastScannedAt = Carbon::createFromFormat(
+            'Y-m-d H:i:s',
+            $ticket->scanned_at,
+            'Asia/Jakarta'
+        );
         $now = Carbon::now('Asia/Jakarta');
-        $elapsedSeconds = $lastScannedAt->diffInSeconds($now);
+        $elapsedSeconds = $lastScannedAt->diffInSeconds($now, false);
         $remainingSeconds = $cooldownSeconds - $elapsedSeconds;
 
         if ($remainingSeconds <= 0) {
             return null;
         }
 
+        $maxAllowed = $this->resolveMaxScan((int) $ticket->qty);
+        $remainingTicket = max(0, $maxAllowed - (int) $ticket->scanned);
+
         return response()->json([
             "status" => "wait",
-            "count" => max(0, (int) $ticket->scanned),
+            "count" => $remainingTicket,
             "cooldown_seconds" => $cooldownSeconds,
             "remaining_seconds" => $remainingSeconds,
             "message" => "Ticket belum bisa discan lagi. Tunggu {$remainingSeconds} detik."
@@ -519,43 +528,7 @@ class ApiController extends Controller
 
     function last_member()
     {
-        $now = now("Asia/Jakarta");
-
-        $lastMember = History::latest("waktu")->first();
-        if (!$lastMember) {
-            return response()->json([
-                "status" => "error",
-                "message" => "Not last member data",
-                "data" => [
-                    "image" => asset("/img/no-image.jpg"),
-                ]
-            ]);
-        }
-
-        $lastMemberTime = Carbon::parse($lastMember->waktu)->addSecond(10);
-
-        if ($now <= $lastMemberTime) {
-            $response = [
-                "image" => $lastMember->member->image_profile != null ? config('app.url') . "/storage/" . $lastMember->member->image_profile : asset("/img/user-dump.png"),
-                "name" => $lastMember->member->nama,
-                "membership" => $lastMember->member->membership->name,
-                "expired_at" => $lastMember->member->tgl_expired,
-                "status" => $lastMember->member->is_active
-            ];
-
-            return response()->json([
-                "status" => "success",
-                "message" => "Success get last member",
-                "data" => $response
-            ]);
-        } else {
-            return response()->json([
-                "status" => "error",
-                "message" => "Not last member data",
-                "data" => [
-                    "image" => asset("/img/no-image.jpg"),
-                ]
-            ]);
-        }
+        $member = Member::with(['membership'])->latest()->first();
+        return response()->json($member);
     }
 }
