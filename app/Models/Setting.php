@@ -24,7 +24,7 @@ class Setting extends Model
         'ticket_print_orientation' => 'without_summary',
         'ticket_valid_days' => 1,
         'ticket_scan_limit' => 0,
-        'ticket_scan_cooldown_seconds' => 0,
+        'ticket_scan_cooldown_seconds' => 120,
         'dashboard_metric_mode' => 'amount',
         'whatsapp_enabled' => 0,
         'use_logo' => 0,
