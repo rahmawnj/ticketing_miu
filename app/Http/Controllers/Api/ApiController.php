@@ -92,13 +92,14 @@ class ApiController extends Controller
         }
 
         $counting = (int) $transScanned->scanned + 1;
+        $now = Carbon::now('Asia/Jakarta');
         $payload = [
             "scanned" => $counting,
+            "scanned_at" => $now->format('Y-m-d H:i:s'),
         ];
 
         if ($counting >= $maxAllowed) {
             $payload["status"] = "close";
-            $payload["scanned_at"] = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
         }
 
         DetailTransaction::where('ticket_code', $ticket)->update($payload);
@@ -173,6 +174,7 @@ class ApiController extends Controller
         ]);
     }
 
+    // In Use
     public function check(Request $request)
     {
         if (empty($request->ticket)) {
@@ -200,6 +202,12 @@ class ApiController extends Controller
                 ->update([
                     "gate" => $request->gate,
                 ]);
+
+            if (!$transScanned) {
+                return response()->json([
+                    "status" => "Not found"
+                ]);
+            }
 
             if ($this->shouldCloseInvoice($invoice)) {
                 $invoice->status = "closed";
@@ -235,14 +243,15 @@ class ApiController extends Controller
                 return $cooldown;
             }
 
+            $now = Carbon::now('Asia/Jakarta');
             $counting = (int) $transScanned->scanned + 1;
             $payload = [
                 "scanned" => $counting,
+                "scanned_at" => $now->format('Y-m-d H:i:s'),
             ];
 
             if ($counting >= $maxAllowed) {
                 $payload["status"] = "close";
-                $payload["scanned_at"] = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
             }
 
             DetailTransaction::where('ticket_code', $request->ticket)
@@ -449,19 +458,11 @@ class ApiController extends Controller
     private function ticketScanCooldownResponse(DetailTransaction $ticket): ?\Illuminate\Http\JsonResponse
     {
         $cooldownSeconds = max((int) Setting::valueOf('ticket_scan_cooldown_seconds', 0), 0);
-        if ($cooldownSeconds <= 0) {
+        if ($cooldownSeconds <= 0 || empty($ticket->scanned_at)) {
             return null;
         }
 
-        // Use the existing updated_at field as the last successful scan time.
-        // Gate updates happen before this check, so refresh the model from DB
-        // to get the timestamp from the previous successful scan.
-        $lastUpdatedAt = DetailTransaction::where('id', $ticket->id)->value('updated_at');
-        if (empty($lastUpdatedAt)) {
-            return null;
-        }
-
-        $lastScannedAt = Carbon::parse($lastUpdatedAt)->timezone('Asia/Jakarta');
+        $lastScannedAt = Carbon::parse($ticket->scanned_at)->timezone('Asia/Jakarta');
         $now = Carbon::now('Asia/Jakarta');
         $elapsedSeconds = $lastScannedAt->diffInSeconds($now);
         $remainingSeconds = $cooldownSeconds - $elapsedSeconds;
@@ -477,5 +478,72 @@ class ApiController extends Controller
             "remaining_seconds" => $remainingSeconds,
             "message" => "Ticket belum bisa discan lagi. Tunggu {$remainingSeconds} detik."
         ], 429);
+    }
+
+    private function shouldCloseInvoice(Transaction $invoice): bool
+    {
+        $details = $invoice->detail()->get(['id', 'qty', 'scanned']);
+        if ($details->isEmpty()) {
+            return false;
+        }
+
+        foreach ($details as $detail) {
+            $allowed = $this->resolveMaxScan((int) $detail->qty);
+            if ($allowed <= 0) {
+                return false;
+            }
+            if ((int) $detail->scanned < $allowed) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function detailGroup()
+    {
+        return view('detail');
+    }
+
+    function last_member()
+    {
+        $now = now("Asia/Jakarta");
+
+        $lastMember = History::latest("waktu")->first();
+        if (!$lastMember) {
+            return response()->json([
+                "status" => "error",
+                "message" => "Not last member data",
+                "data" => [
+                    "image" => asset("/img/no-image.jpg"),
+                ]
+            ]);
+        }
+
+        $lastMemberTime = Carbon::parse($lastMember->waktu)->addSecond(10);
+
+        if ($now <= $lastMemberTime) {
+            $response = [
+                "image" => $lastMember->member->image_profile != null ? config('app.url') . "/storage/" . $lastMember->member->image_profile : asset("/img/user-dump.png"),
+                "name" => $lastMember->member->nama,
+                "membership" => $lastMember->member->membership->name,
+                "expired_at" => $lastMember->member->tgl_expired,
+                "status" => $lastMember->member->is_active
+            ];
+
+            return response()->json([
+                "status" => "success",
+                "message" => "Success get last member",
+                "data" => $response
+            ]);
+        } else {
+            return response()->json([
+                "status" => "error",
+                "message" => "Not last member data",
+                "data" => [
+                    "image" => asset("/img/no-image.jpg"),
+                ]
+            ]);
+        }
     }
 }
