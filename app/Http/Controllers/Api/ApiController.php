@@ -78,6 +78,7 @@ class ApiController extends Controller
             ]);
         }
 
+        $transScanned->refresh();
         $cooldown = $this->ticketScanCooldownResponse($transScanned);
         if ($cooldown) {
             return $cooldown;
@@ -203,10 +204,17 @@ class ApiController extends Controller
                     "gate" => $request->gate,
                 ]);
 
+            $transScanned->refresh();
+
             if (!$transScanned) {
                 return response()->json([
                     "status" => "Not found"
                 ]);
+            }
+
+            $cooldown = $this->ticketScanCooldownResponse($transScanned);
+            if ($cooldown) {
+                return $cooldown;
             }
 
             if ($this->shouldCloseInvoice($invoice)) {
@@ -236,11 +244,6 @@ class ApiController extends Controller
                     "count" => 0,
                     "message" => "Ticket already fully scanned"
                 ]);
-            }
-
-            $cooldown = $this->ticketScanCooldownResponse($transScanned);
-            if ($cooldown) {
-                return $cooldown;
             }
 
             $now = Carbon::now('Asia/Jakarta');
@@ -458,7 +461,16 @@ class ApiController extends Controller
     private function ticketScanCooldownResponse(DetailTransaction $ticket): ?\Illuminate\Http\JsonResponse
     {
         $cooldownSeconds = max((int) Setting::valueOf('ticket_scan_cooldown_seconds', 0), 0);
-        if ($cooldownSeconds <= 0 || empty($ticket->scanned_at)) {
+        if ($cooldownSeconds <= 0) {
+            return null;
+        }
+
+        $latestTicket = DetailTransaction::find($ticket->id);
+        if ($latestTicket) {
+            $ticket = $latestTicket;
+        }
+
+        if (empty($ticket->scanned_at)) {
             return null;
         }
 
