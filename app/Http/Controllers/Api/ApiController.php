@@ -21,7 +21,6 @@ class ApiController extends Controller
     public function getCode()
     {
         $tickets = Ticket::select(['id', 'name', 'harga'])->get();
-
         return $this->sendResponse($tickets, 'Tickets list');
     }
 
@@ -33,49 +32,29 @@ class ApiController extends Controller
             ->select(['ticket_code', 'amount', 'amount_scanned', 'updated_at'])
             ->orderBy('updated_at', 'desc')
             ->first();
-
         $transaction['time'] = Carbon::parse($transaction->updated_at)->format('d/m/Y H:i:s');
-
         return response()->json($transaction);
     }
 
     public function getNoTrx()
     {
         $noTrx = Transaction::nextNoTrxByType('ticket', Carbon::now('Asia/Jakarta'));
-
-        return response()->json([
-            "no_trx" => $noTrx,
-        ]);
+        return response()->json(["no_trx" => $noTrx]);
     }
 
     public function checkIndividualTicket($ticket)
     {
-        $transScanned = DetailTransaction::with('transaction')
-            ->where('ticket_code', $ticket)
-            ->first();
-
+        $transScanned = DetailTransaction::with('transaction')->where('ticket_code', $ticket)->first();
         if (!$transScanned) {
-            return response()->json([
-                "status" => "Not found",
-                "message" => "Ticket not found"
-            ]);
+            return response()->json(["status" => "Not found", "message" => "Ticket not found"]);
         }
-
         if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) {
-            return response()->json([
-                "status" => "close",
-                "count" => 0,
-                "message" => "Ticket expired"
-            ]);
+            return response()->json(["status" => "close", "count" => 0, "message" => "Ticket expired"]);
         }
 
         $maxAllowed = $this->resolveMaxScan((int) $transScanned->qty);
         if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) {
-            return response()->json([
-                "status" => "close",
-                "count" => 0,
-                "message" => "Ticket already fully scanned"
-            ]);
+            return response()->json(["status" => "close", "count" => 0, "message" => "Ticket already fully scanned"]);
         }
 
         $transScanned->refresh();
@@ -83,30 +62,19 @@ class ApiController extends Controller
         if ($cooldown) {
             return $cooldown;
         }
-
         if ($transScanned->status == "close") {
-            return response()->json([
-                "status" => $transScanned->status,
-                "count" => 0,
-                "message" => "Ticket closed"
-            ]);
+            return response()->json(["status" => $transScanned->status, "count" => 0, "message" => "Ticket closed"]);
         }
 
         $counting = (int) $transScanned->scanned + 1;
         $now = Carbon::now('Asia/Jakarta');
-        $payload = [
+        DetailTransaction::where('ticket_code', $ticket)->update([
             "scanned" => $counting,
             "scanned_at" => $now->format('Y-m-d H:i:s'),
-        ];
-
-        if ($counting >= $maxAllowed) {
-            $payload["status"] = "close";
-        }
-
-        DetailTransaction::where('ticket_code', $ticket)->update($payload);
+        ]);
 
         return response()->json([
-            "status" => $counting >= $maxAllowed ? "close" : "open",
+            "status" => "open",
             "count" => max(0, $maxAllowed - $counting),
             "message" => "OK"
         ]);
@@ -114,151 +82,58 @@ class ApiController extends Controller
 
     public function checkGroupTicket(Request $request, $ticket)
     {
-        $transScanned = Transaction::where('ticket_code', $ticket)->where('tipe', 'group')
-            ->first();
-
-        if (!$transScanned) {
-            return response()->json([
-                "status" => "not found",
-                "message" => "Ticket not found"
-            ]);
-        }
-
-        if (!$this->isTicketWithinValidity($transScanned->created_at)) {
-            return response()->json([
-                "status" => "closed",
-                "count" => 0,
-                "message" => "Ticket expired"
-            ]);
-        }
+        $transScanned = Transaction::where('ticket_code', $ticket)->where('tipe', 'group')->first();
+        if (!$transScanned) return response()->json(["status" => "not found", "message" => "Ticket not found"]);
+        if (!$this->isTicketWithinValidity($transScanned->created_at)) return response()->json(["status" => "closed", "count" => 0, "message" => "Ticket expired"]);
 
         $maxAllowed = $this->resolveMaxScan((int) $transScanned->amount);
-        if ($maxAllowed <= 0 || (int) $transScanned->amount_scanned >= $maxAllowed) {
-            return response()->json([
-                "status" => "closed",
-                "count" => 0,
-                "message" => "Ticket already fully scanned"
-            ]);
-        }
-
-        $transScanned->update([
-            "gate" => $request->gate,
-        ]);
-
-        if ($transScanned->status == "closed") {
-            return response()->json([
-                "status" => $transScanned->status,
-                "count" => 0,
-                "message" => "Ticket closed"
-            ]);
-        }
+        if ($maxAllowed <= 0 || (int) $transScanned->amount_scanned >= $maxAllowed) return response()->json(["status" => "closed", "count" => 0, "message" => "Ticket already fully scanned"]);
+        $transScanned->update(["gate" => $request->gate]);
+        if ($transScanned->status == "closed") return response()->json(["status" => $transScanned->status, "count" => 0, "message" => "Ticket closed"]);
 
         $counting = $transScanned->amount_scanned + 1;
-
-        if ($counting >= $maxAllowed) {
-            Transaction::where('ticket_code', $ticket)
-                ->update([
-                    "status" => "closed",
-                    "amount_scanned" => $counting
-                ]);
-        } else {
-            Transaction::where('ticket_code', $ticket)
-                ->update([
-                    "amount_scanned" => $counting
-                ]);
-        }
-
-        return response()->json([
-            "status" => $transScanned->status,
-            "count" => max(0, $maxAllowed - $counting),
-            "message" => "OK"
-        ]);
+        Transaction::where('ticket_code', $ticket)->update(["amount_scanned" => $counting]);
+        return response()->json(["status" => "open", "count" => max(0, $maxAllowed - $counting), "message" => "OK"]);
     }
 
-    // In Use
     public function check(Request $request)
     {
-        if (empty($request->ticket)) {
-            return response()->json([
-                "status" => "error",
-                "message" => "QR Code/Ticket tidak boleh kosong!"
-            ], 400);
-        }
+        if (empty($request->ticket)) return response()->json(["status" => "error", "message" => "QR Code/Ticket tidak boleh kosong!"], 400);
 
-        $transScanned = DetailTransaction::with('transaction')
-            ->where('ticket_code', $request->ticket)
-            ->first();
-
+        $transScanned = DetailTransaction::with('transaction')->where('ticket_code', $request->ticket)->first();
         if ($transScanned) {
-            if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) {
-                return response()->json([
-                    "status" => "close",
-                    "message" => "Ticket expired"
-                ]);
-            }
+            if (!$this->isTicketWithinValidity($transScanned->transaction?->created_at)) return response()->json(["status" => "close", "message" => "Ticket expired"]);
 
             $invoice = Transaction::where('id', $transScanned->transaction_id)->first();
-
-            DetailTransaction::where('ticket_code', $request->ticket)
-                ->update([
-                    "gate" => $request->gate,
-                ]);
-
+            DetailTransaction::where('ticket_code', $request->ticket)->update(["gate" => $request->gate]);
             $transScanned->refresh();
+            if (!$transScanned) return response()->json(["status" => "Not found"]);
 
-            if (!$transScanned) {
-                return response()->json([
-                    "status" => "Not found"
-                ]);
+            $maxAllowed = $this->resolveMaxScan((int) $transScanned->qty);
+
+            // Once the quota is exhausted, this is immediately closed.
+            // Do not apply cooldown to scans after the final successful scan.
+            if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) {
+                return response()->json(["status" => "close", "count" => 0, "message" => "Ticket already fully scanned"]);
             }
 
             $cooldown = $this->ticketScanCooldownResponse($transScanned);
-            if ($cooldown) {
-                return $cooldown;
-            }
+            if ($cooldown) return $cooldown;
 
             if ($this->shouldCloseInvoice($invoice)) {
                 $invoice->status = "closed";
                 $invoice->amount_scanned = $invoice->detail()->sum('scanned');
                 $invoice->save();
-
-                return response()->json([
-                    "status" => "close",
-                    "count" => 0,
-                    "message" => "Ticket closed"
-                ]);
+                return response()->json(["status" => "close", "count" => 0, "message" => "Ticket closed"]);
             }
+            if ($transScanned->status == "close") return response()->json(["status" => $transScanned->status, "count" => 0, "message" => "Ticket closed"]);
 
-            if ($transScanned->status == "close") {
-                return response()->json([
-                    "status" => $transScanned->status,
-                    "count" => 0,
-                    "message" => "Ticket closed"
-                ]);
-            }
-
-            $maxAllowed = $this->resolveMaxScan((int) $transScanned->qty);
-            if ($maxAllowed <= 0 || (int) $transScanned->scanned >= $maxAllowed) {
-                return response()->json([
-                    "status" => "close",
-                    "count" => 0,
-                    "message" => "Ticket already fully scanned"
-                ]);
-            }
-
-            $now = Carbon::now('Asia/Jakarta');
             $counting = (int) $transScanned->scanned + 1;
-            $payload = [
+            $now = Carbon::now('Asia/Jakarta');
+            DetailTransaction::where('ticket_code', $request->ticket)->update([
                 "scanned" => $counting,
                 "scanned_at" => $now->format('Y-m-d H:i:s'),
-            ];
-
-            if ($counting >= $maxAllowed) {
-                $payload["status"] = "close";
-            }
-
-            DetailTransaction::where('ticket_code', $request->ticket)
-                ->update($payload);
+            ]);
 
             if ($this->shouldCloseInvoice($invoice)) {
                 $invoice->status = "closed";
@@ -266,179 +141,76 @@ class ApiController extends Controller
                 $invoice->save();
             }
 
+            // The final quota-consuming scan is still OPEN. The next scan is CLOSE.
             return response()->json([
-                "status" => $counting >= $maxAllowed ? "close" : "open",
+                "status" => "open",
                 "count" => max(0, $maxAllowed - $counting),
                 "message" => "OK"
             ]);
-        } else {
-            $now = now('Asia/Jakarta')->format('Y-m-d');
-
-            $member = Member::where('rfid', $request->ticket)->orWhere('qr_code', $request->ticket)->first();
-            $employe = User::where('uid', $request->ticket)->first();
-
-            if ($member) {
-                if ($now >= $member->tgl_register && $now <= $member->tgl_expired) {
-                    $membership = Membership::find($member->membership_id);
-                    if (!$membership) {
-                        return response()->json([
-                            "status" => "error",
-                            "message" => "Member not subcribed"
-                        ], 500);
-                    }
-
-                    $maxAccess = max((int) ($membership->max_access ?? 0), 0);
-                    $accessUsed = max((int) ($member->access_used ?? 0), 0);
-                    $isUnlimitedAccess = $maxAccess === 0;
-                    if (!$isUnlimitedAccess && $accessUsed >= $maxAccess) {
-                        return response()->json([
-                            "status" => 'close',
-                            "message" => "Kuota akses habis",
-                            "count" => 0,
-                            "membership_access" => [
-                                "type" => "limited",
-                                "limit" => $maxAccess,
-                                "used" => $accessUsed,
-                                "remaining" => 0,
-                            ]
-                        ], 500);
-                    }
-
-                    $gates = $membership->gates()->pluck('id')->toArray();
-
-                    if (in_array($request->gate, $gates)) {
-                        History::create([
-                            'member_id' => $member->id,
-                            'gate' => $request->gate,
-                            'user_id' => 0,
-                            'waktu' => now('Asia/Jakarta')->format('Y-m-d H:i:s')
-                        ]);
-
-                        $member->increment('access_used');
-                        $accessUsed += 1;
-                        $remainingAccess = $isUnlimitedAccess ? null : max($maxAccess - $accessUsed, 0);
-
-                        return response()->json([
-                            "status" => 'open',
-                            "message" => "Success open gate",
-                            "count" => $remainingAccess,
-                            "membership_access" => [
-                                "type" => $isUnlimitedAccess ? "unlimited" : "limited",
-                                "limit" => $isUnlimitedAccess ? null : $maxAccess,
-                                "used" => $accessUsed,
-                                "remaining" => $remainingAccess,
-                            ]
-                        ], 200);
-                    } else {
-                        $remainingAccess = $isUnlimitedAccess ? null : max($maxAccess - $accessUsed, 0);
-                        return response()->json([
-                            "status" => 'close',
-                            "message" => "Cannot access gate",
-                            "count" => $remainingAccess,
-                            "membership_access" => [
-                                "type" => $isUnlimitedAccess ? "unlimited" : "limited",
-                                "limit" => $isUnlimitedAccess ? null : $maxAccess,
-                                "used" => $accessUsed,
-                                "remaining" => $remainingAccess,
-                            ]
-                        ], 500);
-                    }
-                } else {
-                    return response()->json([
-                        "status" => 'close',
-                        "message" => "Member expired"
-                    ]);
-                }
-            } else if ($employe) {
-                if ($employe->is_active == 0) {
-                    return response()->json([
-                        "status" => 'close',
-                        "message" => "Karyawan sudah tidak aktif"
-                    ]);
-                }
-
-                History::create([
-                    'member_id' => 0,
-                    'gate' => $request->gate,
-                    'user_id' => $employe->id,
-                    'waktu' => now('Asia/Jakarta')->format('Y-m-d H:i:s')
-                ]);
-
-                return response()->json([
-                    "status" => 'open',
-                    "message" => "Gate user"
-                ]);
-            } else {
-                return response()->json([
-                    "status" => 'close',
-                    "message" => "Card tidak terdaftar"
-                ]);
-            }
         }
+
+        $now = now('Asia/Jakarta')->format('Y-m-d');
+        $member = Member::where('rfid', $request->ticket)->orWhere('qr_code', $request->ticket)->first();
+        $employe = User::where('uid', $request->ticket)->first();
+        if ($member) {
+            if ($now >= $member->tgl_register && $now <= $member->tgl_expired) {
+                $membership = Membership::find($member->membership_id);
+                if (!$membership) return response()->json(["status" => "error", "message" => "Member not subcribed"], 500);
+                $maxAccess = max((int) ($membership->max_access ?? 0), 0);
+                $accessUsed = max((int) ($member->access_used ?? 0), 0);
+                $isUnlimitedAccess = $maxAccess === 0;
+                if (!$isUnlimitedAccess && $accessUsed >= $maxAccess) return response()->json(["status" => 'close', "message" => "Kuota akses habis", "count" => 0, "membership_access" => ["type" => "limited", "limit" => $maxAccess, "used" => $accessUsed, "remaining" => 0]], 500);
+                $gates = $membership->gates()->pluck('id')->toArray();
+                if (in_array($request->gate, $gates)) {
+                    History::create(['member_id' => $member->id, 'gate' => $request->gate, 'user_id' => 0, 'waktu' => now('Asia/Jakarta')->format('Y-m-d H:i:s')]);
+                    $member->increment('access_used');
+                    $accessUsed += 1;
+                    $remainingAccess = $isUnlimitedAccess ? null : max($maxAccess - $accessUsed, 0);
+                    return response()->json(["status" => 'open', "message" => "Success open gate", "count" => $remainingAccess, "membership_access" => ["type" => $isUnlimitedAccess ? "unlimited" : "limited", "limit" => $isUnlimitedAccess ? null : $maxAccess, "used" => $accessUsed, "remaining" => $remainingAccess]], 200);
+                }
+                $remainingAccess = $isUnlimitedAccess ? null : max($maxAccess - $accessUsed, 0);
+                return response()->json(["status" => 'close', "message" => "Cannot access gate", "count" => $remainingAccess, "membership_access" => ["type" => $isUnlimitedAccess ? "unlimited" : "limited", "limit" => $isUnlimitedAccess ? null : $maxAccess, "used" => $accessUsed, "remaining" => $remainingAccess]], 500);
+            }
+            return response()->json(["status" => 'close', "message" => "Member expired"]);
+        }
+        if ($employe) {
+            if ($employe->is_active == 0) return response()->json(["status" => 'close', "message" => "Karyawan sudah tidak aktif"]);
+            History::create(['member_id' => 0, 'gate' => $request->gate, 'user_id' => $employe->id, 'waktu' => now('Asia/Jakarta')->format('Y-m-d H:i:s')]);
+            return response()->json(["status" => 'open', "message" => "Gate user"]);
+        }
+        return response()->json(["status" => 'close', "message' => "Card tidak terdaftar"]);
     }
 
     public function gateTerusan(Request $request)
     {
         $ticket = Transaction::where('ticket_code', $request->ticket)->first();
-
         if ($ticket) {
             if ($ticket->ticket->jenis_ticket_id == 2 && $this->isTicketWithinValidity($ticket->created_at)) {
                 $maxAllowed = $this->resolveMaxScan((int) $ticket->amount);
-                if ($maxAllowed <= 0 || (int) $ticket->amount_scanned >= $maxAllowed) {
-                    return response()->json([
-                        "status" => 'close',
-                    ]);
-                }
-
+                if ($maxAllowed <= 0 || (int) $ticket->amount_scanned >= $maxAllowed) return response()->json(["status" => 'close']);
                 $terusan = Terusan::where('tripod', $request->tripod)->first();
-
                 if ($terusan) {
                     $nextCount = (int) $ticket->amount_scanned + 1;
-                    $payload = [
-                        'amount_scanned' => $nextCount,
-                    ];
-
-                    if ($nextCount >= $maxAllowed) {
-                        $payload['status'] = 'closed';
-                    }
-
+                    $payload = ['amount_scanned' => $nextCount];
+                    if ($nextCount >= $maxAllowed) $payload['status'] = 'closed';
                     $ticket->update($payload);
-
-                    return response()->json([
-                        "status" => 'open',
-                    ]);
-                } else {
-                    return response()->json([
-                        "status" => 'close',
-                    ]);
+                    return response()->json(["status" => 'open']);
                 }
-            } else {
-                return response()->json([
-                    "status" => 'close',
-                ]);
+                return response()->json(["status" => 'close']);
             }
-        } else {
-            return response()->json([
-                "status" => 'close',
-            ]);
+            return response()->json(["status" => 'close']);
         }
+        return response()->json(["status" => 'close']);
     }
 
     private function isTicketWithinValidity(mixed $createdAt): bool
     {
         $validDays = (int) Setting::valueOf('ticket_valid_days', 1);
-        if ($validDays <= 0) {
-            return true;
-        }
-
-        if (empty($createdAt)) {
-            return false;
-        }
-
+        if ($validDays <= 0) return true;
+        if (empty($createdAt)) return false;
         $now = Carbon::now('Asia/Jakarta')->startOfDay();
         $created = Carbon::parse($createdAt)->timezone('Asia/Jakarta')->startOfDay();
         $diffDays = $created->diffInDays($now, false);
-
         return $diffDays >= 0 && $diffDays < $validDays;
     }
 
@@ -446,89 +218,40 @@ class ApiController extends Controller
     {
         $limit = (int) Setting::valueOf('ticket_scan_limit', 0);
         $qty = max($qty, 0);
-
-        if ($limit <= 0) {
-            return $qty;
-        }
-
-        if ($qty <= 0) {
-            return $limit;
-        }
-
+        if ($limit <= 0) return $qty;
+        if ($qty <= 0) return $limit;
         return $qty * $limit;
     }
 
     private function ticketScanCooldownResponse(DetailTransaction $ticket): ?\Illuminate\Http\JsonResponse
     {
         $cooldownSeconds = max((int) Setting::valueOf('ticket_scan_cooldown_seconds', 0), 0);
-        if ($cooldownSeconds <= 0) {
-            return null;
-        }
-
+        if ($cooldownSeconds <= 0) return null;
         $latestTicket = DetailTransaction::find($ticket->id);
-        if ($latestTicket) {
-            $ticket = $latestTicket;
-        }
-
-        if (empty($ticket->scanned_at)) {
-            return null;
-        }
-
-        // scanned_at is stored as a Jakarta local timestamp, so parse it explicitly
-        // in the same timezone instead of letting the app/server timezone reinterpret it.
-        $lastScannedAt = Carbon::createFromFormat(
-            'Y-m-d H:i:s',
-            $ticket->scanned_at,
-            'Asia/Jakarta'
-        );
+        if ($latestTicket) $ticket = $latestTicket;
+        if (empty($ticket->scanned_at)) return null;
+        $lastScannedAt = Carbon::createFromFormat('Y-m-d H:i:s', $ticket->scanned_at, 'Asia/Jakarta');
         $now = Carbon::now('Asia/Jakarta');
         $elapsedSeconds = $lastScannedAt->diffInSeconds($now, false);
         $remainingSeconds = $cooldownSeconds - $elapsedSeconds;
-
-        if ($remainingSeconds <= 0) {
-            return null;
-        }
-
+        if ($remainingSeconds <= 0) return null;
         $maxAllowed = $this->resolveMaxScan((int) $ticket->qty);
         $remainingTicket = max(0, $maxAllowed - (int) $ticket->scanned);
-
-        return response()->json([
-            "status" => "wait",
-            "count" => $remainingTicket,
-            "cooldown_seconds" => $cooldownSeconds,
-            "remaining_seconds" => $remainingSeconds,
-            "message" => "Ticket belum bisa discan lagi. Tunggu {$remainingSeconds} detik."
-        ], 429);
+        return response()->json(["status" => "wait", "count" => $remainingTicket, "cooldown_seconds" => $cooldownSeconds, "remaining_seconds" => $remainingSeconds, "message" => "Ticket belum bisa discan lagi. Tunggu {$remainingSeconds} detik."], 429);
     }
 
     private function shouldCloseInvoice(Transaction $invoice): bool
     {
         $details = $invoice->detail()->get(['id', 'qty', 'scanned']);
-        if ($details->isEmpty()) {
-            return false;
-        }
-
+        if ($details->isEmpty()) return false;
         foreach ($details as $detail) {
             $allowed = $this->resolveMaxScan((int) $detail->qty);
-            if ($allowed <= 0) {
-                return false;
-            }
-            if ((int) $detail->scanned < $allowed) {
-                return false;
-            }
+            if ($allowed <= 0) return false;
+            if ((int) $detail->scanned < $allowed) return false;
         }
-
         return true;
     }
 
-    public function detailGroup()
-    {
-        return view('detail');
-    }
-
-    function last_member()
-    {
-        $member = Member::with(['membership'])->latest()->first();
-        return response()->json($member);
-    }
+    public function detailGroup() { return view('detail'); }
+    function last_member() { return response()->json(Member::with(['membership'])->latest()->first()); }
 }
