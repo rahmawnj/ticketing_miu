@@ -24,6 +24,7 @@ class Setting extends Model
         'ticket_print_orientation' => 'without_summary',
         'ticket_valid_days' => 1,
         'ticket_scan_limit' => 0,
+        'ticket_scan_cooldown_seconds' => 0,
         'dashboard_metric_mode' => 'amount',
         'whatsapp_enabled' => 0,
         'use_logo' => 0,
@@ -62,6 +63,7 @@ class Setting extends Model
         $merged['member_suspend_after_days'] = max((int) $merged['member_suspend_after_days'], 0);
         $merged['ticket_valid_days'] = max((int) $merged['ticket_valid_days'], 0);
         $merged['ticket_scan_limit'] = max((int) $merged['ticket_scan_limit'], 0);
+        $merged['ticket_scan_cooldown_seconds'] = max((int) $merged['ticket_scan_cooldown_seconds'], 0);
         $merged['whatsapp_enabled'] = (int) $merged['whatsapp_enabled'];
         $merged['use_logo'] = (int) $merged['use_logo'];
         $merged['website_status'] = (int) $merged['website_status'];
@@ -85,4 +87,3 @@ class Setting extends Model
         }
     }
 }
-
