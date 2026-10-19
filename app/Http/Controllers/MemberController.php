@@ -699,17 +699,50 @@ public function update(UpdateMemberRequest $request, Member $member)
 
     public function findOne(Request $request)
     {
-        $member = Member::where('rfid', $request->rfid)->first();
+        $rfid = trim((string) $request->query('rfid', ''));
 
-        if ($member) {
-            return response()->json([
-                'status' => 'success',
-                'member' => $member
+        if ($rfid === '') {
+            Log::warning('API members: parameter RFID kosong.', [
+                'ip' => $request->ip(),
+                'url' => $request->fullUrl(),
             ]);
-        } else {
+
             return response()->json([
                 'status' => 'error',
+                'message' => 'Parameter rfid wajib diisi.',
+            ], 400);
+        }
+
+        try {
+            $member = Member::where('rfid', $rfid)->first();
+
+            if ($member) {
+                return response()->json([
+                    'status' => 'success',
+                    'member' => $member
+                ]);
+            }
+
+            Log::warning('API members: member tidak ditemukan berdasarkan RFID.', [
+                'rfid' => $rfid,
+                'ip' => $request->ip(),
             ]);
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Member tidak ditemukan.',
+            ], 404);
+        } catch (\\Throwable $exception) {
+            Log::error('API members: gagal mencari member berdasarkan RFID.', [
+                'rfid' => $rfid,
+                'ip' => $request->ip(),
+                'exception' => $exception->getMessage(),
+            ]);
+
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Terjadi kesalahan saat mencari member.',
+            ], 500);
         }
     }
 
