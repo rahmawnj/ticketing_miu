@@ -732,7 +732,7 @@ public function update(UpdateMemberRequest $request, Member $member)
                 'status' => 'error',
                 'message' => 'Member tidak ditemukan.',
             ], 404);
-        } catch (\\Throwable $exception) {
+        } catch (\Throwable $exception) {
             Log::error('API members: gagal mencari member berdasarkan RFID.', [
                 'rfid' => $rfid,
                 'ip' => $request->ip(),
